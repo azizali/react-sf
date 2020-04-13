@@ -15,7 +15,7 @@ import Button from './Button';
 export default function Content (props){
   // Object Destructuring
   let { name, age, locations, info, cb } = props;
-
+  const to = null; //'https://google.com';
   // DO NOT reassign value to prop
   // props.name = 'something else';
 
@@ -28,14 +28,14 @@ export default function Content (props){
       info: {info.address} <br/>
       cb: {cb()} <br/>
 
-      <Button
+      {to && <Button
         value="Click me"
         type="anchor"
-        // to="https://google.com"
+        to="https://google.com"
         id="x"
         width="100px"
         border="true"
-      />
+      />}
 
       <Button
         value="Click me 2"
