@@ -31,7 +31,7 @@ export default function Content (props){
       <Button
         value="Click me"
         type="anchor"
-        to="https://google.com"
+        // to="https://google.com"
         id="x"
         width="100px"
         border="true"

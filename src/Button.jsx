@@ -1,18 +1,5 @@
 import React from 'react';
-
-// const props = {
-//   type: 'a',
-//   value: 'b',
-//   z: 'z',
-//   x: 'x'
-// }
-
-// const { value, type, to, ...everythingElse } = props
-// everythingElse = {
-//   z: 'z',
-//   x: 'x'
-// }
-
+import PropTypes from 'prop-types';
 
 export default function Button({ value, type, to, ...remainingProps }){
   if(type === 'anchor'){
@@ -30,4 +17,15 @@ export default function Button({ value, type, to, ...remainingProps }){
       <button {...remainingProps}>{value}</button>
     )
   }
+}
+
+Button.propTypes = {
+  value: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(['button', 'input', 'anchor']),
+  // to: PropTypes.string,
+  to: function(props, propName, componentName) {
+    if(props.type === 'anchor' && typeof props[propName] === 'undefined'){
+      return new Error(`${propName} is required when type='anchor'`);
+    }
+  },
 }
