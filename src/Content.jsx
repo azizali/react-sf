@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Button from './Button';
 // const bigObj = {
 //   a: 'a',
 //   b: 'b',
@@ -27,6 +27,31 @@ export default function Content (props){
       location: {locations} <br/>
       info: {info.address} <br/>
       cb: {cb()} <br/>
+
+      <Button
+        value="Click me"
+        type="anchor"
+        to="https://google.com"
+        id="x"
+        width="100px"
+        border="true"
+      />
+
+      <Button
+        value="Click me 2"
+        type="button"
+        id="y"
+        width="200px"
+        border="true"
+      />
+
+      <Button
+        value="Click me 3"
+        type="input"
+        id="z"
+        width="300px"
+        border="true"
+      />
     </div>
   )
 }
