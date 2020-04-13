@@ -1,0 +1,44 @@
+//webpack.config
+{
+  index.js inject index.html
+}
+
+
+// Parcel
+
+index.html script ComponentA
+ComponentA > Componet
+ComponentB
+ComponentC
+
+parcel index.html
+
+
+
+Old React > UI FOR THE WEB
+
+React - Component
+React-DOM -Helper using React Component for DOM
+React-Native -Helper using React Component for Mobile Apps
+
+
+
+----------
+
+ES6+ 
+
+babel Transpiler > ES5
+
+
+node.js + npm: Node Package Manager
+
+ 
+React > Bundler > common.js > 
+--------------------------- > ---------------------------
+        NODE.js                     Browser
+
+
+
+
+
+        
