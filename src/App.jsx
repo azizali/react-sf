@@ -5,10 +5,12 @@ import Footer from './Footer';
 
 export default function App (props) {
   return (
-    <div>
+    <>
+      {/* // <React.Fragment> */}
       <Header />
       <ContentTwo />
       <Footer />
-    </div>
+      {/* </React.Fragment> */}
+    </>
   )
 }
