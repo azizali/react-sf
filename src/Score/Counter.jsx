@@ -7,6 +7,26 @@ export default class Counter extends React.Component {
       count: 0,
       name: 'SF'
     }
+    // Way #1 Pre-binding `this` in key constructor
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClickTwo = ()=>{
+    this.setState((prevState, prevProp)=>{
+      return {
+        count: prevState.count + 1,
+        age: 12,
+      }
+    });
+  }
+
+  handleClick(){
+      this.setState((prevState, prevProp)=>{
+        return {
+          count: prevState.count + 1,
+          age: 12,
+        }
+      });
   }
 
   render(){
@@ -15,33 +35,18 @@ export default class Counter extends React.Component {
       <>
         Name: {this.state.name} <br/>
         Age: {this.state.age},
-        <button onClick={()=>{
-          // The wrong way to update state
-          // this.state.count = this.state.count + 1
-          
-          // Right way to update state
-          // this.setState({
-          //   count: this.state.count + 1,
-          //   age: 12,
-          // });
-
-          console.log('Count before', this.state.count);
-          // Use callback function in this.setState
-          // if your new state replies on prevState or prevProp
-          this.setState((prevState, prevProp)=>{
-            return {
-              count: prevState.count + 1,
-              age: 12,
-            }
-          }, ()=>{
-            console.log('done callback', this.state.count);
-          });
-
-          console.log('Count after', this.state.count);
-
-        }}>
-          Count: {this.state.count}
+        <button onClick={this.handleClick}>
+          Pre-bind: {this.state.count}
         </button>
+        {/* // Way #2 */}
+        <button onClick={this.handleClick.bind(this)}>
+          Bind inline: {this.state.count}
+        </button>
+
+        <button onClick={this.handleClickTwo}>
+          Handle Click Two: {this.state.count}
+        </button>
+        
       </>
     )
   }
