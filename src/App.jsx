@@ -6,12 +6,14 @@ import React from 'react';
 // import Footer from './Footer';
 // import CarsList from './CarsList';
 // import Counter from './Score/Counter';
-import Form from './Form';
+// import Form from './Form';
+import ComplexForm from './ComplexForm';
 
 export default (props) => {
   return (
     <>
-      <Form />
+      <ComplexForm />
+      {/* <Form /> */}
       {/* <Counter /> */}
     </>
   )
