@@ -5,12 +5,14 @@ import React from 'react';
 // import Box from './Box';
 // import Footer from './Footer';
 // import CarsList from './CarsList';
-import Counter from './Score/Counter';
+// import Counter from './Score/Counter';
+import Form from './Form';
 
-export default function App (props) {
+export default (props) => {
   return (
     <>
-      <Counter />
+      <Form />
+      {/* <Counter /> */}
     </>
   )
 }
