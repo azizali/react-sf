@@ -8,12 +8,13 @@ import React from 'react';
 // import Counter from './Score/Counter';
 // import Form from './Form';
 // import ComplexForm from './ComplexForm';
-import ScoreWrapper from './Score/Wrapper';
+// import ScoreWrapper from './Score/Wrapper';
+import Population from './Population';
 
 export default (props) => {
   return (
     <>
-      <ScoreWrapper initialCount={10} />
+      <Population />
     </>
   )
 }
