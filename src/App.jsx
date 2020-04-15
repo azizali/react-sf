@@ -7,14 +7,13 @@ import React from 'react';
 // import CarsList from './CarsList';
 // import Counter from './Score/Counter';
 // import Form from './Form';
-import ComplexForm from './ComplexForm';
+// import ComplexForm from './ComplexForm';
+import ScoreWrapper from './Score/Wrapper';
 
 export default (props) => {
   return (
     <>
-      <ComplexForm />
-      {/* <Form /> */}
-      {/* <Counter /> */}
+      <ScoreWrapper initialCount={10} />
     </>
   )
 }
