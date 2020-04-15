@@ -9,12 +9,13 @@ import React from 'react';
 // import Form from './Form';
 // import ComplexForm from './ComplexForm';
 // import ScoreWrapper from './Score/Wrapper';
-import Population from './Population';
+// import Population from './Population';
+import ScoreWrapper from './Score/WrapperHook';
 
 export default (props) => {
   return (
     <>
-      <Population />
+      <ScoreWrapper initialCount={0} />
     </>
   )
 }
