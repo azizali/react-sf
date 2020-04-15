@@ -11,25 +11,26 @@ export default class Population extends React.Component {
 
   componentDidMount(){
     console.log('componentDidMount - Wrapper');
+    this.getData()
+  }
+
+  getData = async ()=>{
     const url = 'https://datausa.io/api/data?drilldowns=Nation&measures=Population'
     
-    fetch(url)
-      .then((response)=>{
-        return response.json()
-      })
-      .then((json)=>{
-        console.log(json);
-        this.setState({
-          data: json.data,
-          isLoading: false,
-        })
-      })
-      .catch((error)=>{
+    try{
+      const response = await fetch(url);
+      const json = await response.json()
+      console.log(json);
+      this.setState({
+        data: json.data,
+        isLoading: false,
+      });
+    } catch (error){
         console.log(error)
         this.setState({
           isLoading: false,
         })
-      })
+    }
   }
 
   componentDidUpdate(){
