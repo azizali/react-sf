@@ -1,0 +1,33 @@
+import React, {useState} from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import NotFound from './NotFound';
+
+export default function SPA(){
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  return (
+    <BrowserRouter>
+      <div>
+        <Link to={'/'}>Home</Link> |&nbsp;
+        <Link to={'/about'}>About</Link> |&nbsp;
+        <Link to={'/contact'}>Contact</Link>
+      </div>
+      <Switch>
+        <Route exact={true} path="/">
+          <Home logoutCb={()=>setIsLoggedIn(false)} isLoggedIn={isLoggedIn} />
+        </Route>
+        <Route path="/about" render={()=>{
+          return <About />
+        }} />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
+  )
+}
