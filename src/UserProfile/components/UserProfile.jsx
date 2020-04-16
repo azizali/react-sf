@@ -14,7 +14,7 @@ function UserProfile ({ name, setName }){
 const mapStateToProps = (state)=>{
   console.log(state);
   return {
-    name: state.name
+    name: state.userProfile.name
   }
 }
 
