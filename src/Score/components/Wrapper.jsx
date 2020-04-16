@@ -1,37 +1,24 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 export default function WrapperHook({initialCount}) {
+  console.log('run')
   const [name, setName] = useState('SF');
   const [count, setCount] = useState(initialCount);
 
-  const subtractCount = ()=>{
-    setCount(count - 1);
-  }
-
-  const addCount = useCallback(()=>{
-  }, [])
-
-  const itemsMemo = useMemo(()=>{
-    return [Math.random(), 'b', count];
-  }, [])
-  
-  const items = [Math.random(), 'b', 'c'];
-
+  const setFieldLength = useCallback(() =>{
+    setCount(name.length);
+  }, [name.length]);
+ 
   useEffect(()=>{
-    addCount()
-  }, [name, addCount])
+    setFieldLength()
+    // setCount(name.length)
+  }, [name, setFieldLength]);
 
   return (
     <>
-      <button onClick={subtractCount}>-</button>
-        {count} <br />
-        itemsMemo: {itemsMemo} <br/>
-        items: {items}
-      <button onClick={addCount}>+</button>
-      <hr/>
-      <input type="text" onChange={(e)=>{
-        setName(e.target.value)
-      }}/>
+      <input type="text" value={name} onChange={(e)=>{
+        setName(e.target.value);
+      }}/>{count}
     </>
   )
 }
