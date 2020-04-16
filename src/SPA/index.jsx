@@ -18,19 +18,20 @@ export default function SPA(){
       <div>
         <Link to={'/'}>Home</Link> |&nbsp;
         <Link to={'/about'}>About</Link> |&nbsp;
-        <Link to={'/user/azizali'}>User: azizali</Link> |&nbsp;
-        <Link to={'/user/SF'}>User: SF</Link> |&nbsp;
         <Link to={'/user'}>User</Link> |&nbsp;
         <Link to={'/contact'}>Contact</Link>
       </div>
       <Switch>
         <Route exact={true} path="/">
-          <Home logoutCb={()=>setIsLoggedIn(false)} isLoggedIn={isLoggedIn} />
+          <Home
+            logoutCb={()=>setIsLoggedIn(false)}
+            isLoggedIn={isLoggedIn}
+          />
         </Route>
         <Route path="/about" render={(routeProps)=>{
           return <About {...routeProps}/>
         }} />
-        <Route path="/user/:id" component={User} />
+        <Route path="/user" component={User} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

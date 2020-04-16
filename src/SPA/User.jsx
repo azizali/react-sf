@@ -1,5 +1,9 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import { useEffect } from 'react';
+
+import Login from '../Login'
+import UserProfile from './UserProfile'
 
 export default function User({match}){
   const { id } = match.params
@@ -9,7 +13,10 @@ export default function User({match}){
 
   return (
     <div style={{border: '1px solid green'}}>
-      User with id {id}
+      <Link to={'/user/azizali'}>User: azizali</Link> |&nbsp;
+      <Link to={'/user/SF'}>User: SF</Link> |&nbsp;
+      <Route path='/user/:id' component={UserProfile} />
+      <Login />
     </div>
   )
 }

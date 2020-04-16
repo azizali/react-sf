@@ -1,5 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default function LoginWrapper (){
+function LoginWrapper (props){
+  console.log(props)
   return <div>Login Wrapper</div>
 }
+
+export default withRouter(LoginWrapper)

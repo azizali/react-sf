@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default function Home({isLoggedIn, logoutCb}){
+export default function Home({isLoggedIn, logoutCb, ...remainingProps}){
+  console.log(remainingProps)
   return (
     <div style={{border: '1px solid green'}}>
       I am home
