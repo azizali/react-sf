@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {setName} from '../actions';
 
-function UserProfile ({ name, setName }){
+function UserProfile ({ name, setNameCb }){
   return(
     <div>
       Name:{name}
       <hr />
-      <input value={name} onChange={(e)=>setName(e.target.value)}/>
+      <input value={name} onChange={(e)=>setNameCb(e.target.value)}/>
     </div>
   )
 }
@@ -20,11 +21,8 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch)=>{
   return {
-    setName: (name)=>{
-      dispatch({
-        type: 'SET_NAME',
-        payload: name
-      })
+    setNameCb: (name)=>{
+      dispatch(setName(name))
     }
   }
 }

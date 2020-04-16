@@ -1,4 +1,4 @@
-import { compobineReducers, combineReducers } from 'redux';
+import { combineReducers } from 'redux';
 
 import { reducer as userProfile } from '../UserProfile';
 import { reducer as weather } from '../Weather';
