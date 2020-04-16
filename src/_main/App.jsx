@@ -1,11 +1,10 @@
 import React from 'react';
-import Login, { LoginModal } from '../Login';
+import Score from '../Score'
 
 export default (props) => {
   return (
     <>
-      <Login />
-      <LoginModal />
+      <Score initialCount={0} />
     </>
   )
 }
